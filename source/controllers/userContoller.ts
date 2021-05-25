@@ -1,20 +1,18 @@
 import {Request , Response, NextFunction} from 'express';
 import { commonResponseHandler } from '../utilites/reponse';
+import UserControllerInterface from './userContollerInterface';
 
-const userGetContoller = (req: Request, res: Response, next: NextFunction ) => {
-    commonResponseHandler(req,res,null,null);
+export class UserController implements UserControllerInterface {
+     getUserContoller(req: Request, res: Response): any {
+          commonResponseHandler(req,res,null,null);
+     }
+     postUserContoller(req: Request, res: Response): any {
+
+     }
+     putUserContoller(req: Request, res: Response): any {
+
+     }
+     deleteUserContoller(req: Request, res: Response): any {
+
+     }
 }
-
-const userPostContoller = (req: Request, res: Response, next: NextFunction ) => {
-    commonResponseHandler(req,res,null,null);
-}
-const userPutContoller = (req: Request, res: Response, next: NextFunction ) => {
-    commonResponseHandler(req,res,null,null);
-}
-
-const userDeleteContoller = (req: Request, res: Response, next: NextFunction ) => {
-    commonResponseHandler(req,res,null,null);
-}
-
-
-export { userGetContoller,userPostContoller,userPutContoller,userDeleteContoller }

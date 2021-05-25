@@ -1,10 +1,10 @@
 import  express  from 'express';
-import { userGetContoller,userPostContoller,userDeleteContoller,userPutContoller } from '../controllers/userContoller'
+import { UserController } from '../controllers/userContoller'
 const router = express.Router();
 
-router.get('/user',userGetContoller);
-router.put('/user',userPutContoller);
-router.post('/user',userPostContoller);
-router.delete('/user',userDeleteContoller);
+router.get('/user',UserController.prototype.getUserContoller);
+router.put('/user',UserController.prototype.putUserContoller);
+router.post('/user',UserController.prototype.postUserContoller);
+router.delete('/user',UserController.prototype.deleteUserContoller);
 
 export = router;

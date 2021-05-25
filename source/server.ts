@@ -46,7 +46,7 @@ app.use((req,res,next) => {
  * Setup app
 */
 
-app.use('/api/v1',router);
+app.use('/api',router);
 
 /**
  * Error Handelling
@@ -61,7 +61,7 @@ app.use((req,res,next) => {
 /**
  * Setup server 
 */
-const httpServer = http.createServer();
+const httpServer = http.createServer(app);
 httpServer.listen(config.PORT,() => {
     logging.info(namespace,`Server has been started at ${config.HOSTNAME}:${config.PORT}`);
 });
